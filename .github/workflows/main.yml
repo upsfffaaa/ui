@@ -17,8 +17,13 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Install dependencies
-        run: sudo apt-get update && sudo apt-get install -y libxml2-utils
+        run: sudo apt-get update && sudo apt-get install -y libxml2-utils qt5-default qttools5-dev-tools
 
-      - name: Check syntax of mainwindow.ui
+      - name: Check syntax of mainwindow.ui xmllint
         run: |
             xmllint --noout mainwindow.ui
+            
+      - name: Check syntax of mainwindow.ui uic
+        run: |
+            uic mainwindow.ui -o /dev/null
+
