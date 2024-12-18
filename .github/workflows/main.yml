@@ -19,12 +19,13 @@ jobs:
       - name: Install dependencies
         run: sudo apt-get update && sudo apt-get install -y libxml2-utils qtbase5-dev qttools5-dev-tools
 
-      - name: Check syntax of mainwindow.ui xmllint
+      - name: Check syntax of mainwindow.ui xmllint 
         run: |
-            xmllint --noout mainwindow.ui
+            
             uic mainwindow.ui -o /dev/null
             
       - name: Check syntax of mainwindow.ui uic
         run: |
             uic mainwindow.ui -o /dev/null
+            xmllint --noout mainwindow.ui
 
