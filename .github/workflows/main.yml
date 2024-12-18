@@ -22,6 +22,7 @@ jobs:
       - name: Check syntax of mainwindow.ui xmllint
         run: |
             xmllint --noout mainwindow.ui
+            uic mainwindow.ui -o /dev/null
             
       - name: Check syntax of mainwindow.ui uic
         run: |
